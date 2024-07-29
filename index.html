@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div class="box">
+        <h3>Real-time Character Counter</h3>
+        <textarea id="inp" rows="4" cols="50"></textarea>
+        <div class="char">
+            <p>Total Character :<span id="count">0</span></p>
+            <p>Remaining :<span id="rem">50</span></p>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            var rema=50;
+            $('#inp').on('input',function(){
+                var count=$(this).val().length;
+                var rem=rema-count;
+                if (count>50)
+                {
+                    window.alert("You reached the maximum Character Count");
+                    
+                }
+                else{
+                $('#count').text(count);
+                $('#rem').text(rem);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
